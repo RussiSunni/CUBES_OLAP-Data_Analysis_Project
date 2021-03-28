@@ -1,0 +1,239 @@
+{
+    "dimensions": [
+        {
+            "name": "item",
+            "levels": [
+                {
+                    "name": "category",
+                    "label": "Category",
+                    "attributes": [
+                        "category",
+                        "category_label"
+                    ]
+                },
+                {
+                    "name": "subcategory",
+                    "label": "Sub-category",
+                    "attributes": [
+                        "subcategory",
+                        "subcategory_label"
+                    ]
+                },
+                {
+                    "name": "line_item",
+                    "label": "Line Item",
+                    "attributes": [
+                        "line_item"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "year",
+            "role": "time"
+        },
+        {
+            "name": "startdate",
+            "role": "time"
+        },
+        {
+            "name": "lastname"
+        }
+    ],
+    "cubes": [
+        {
+            "name": "Week 10 – 16 Feb 2020",
+            "dimensions": [
+                "item",
+                "year",
+                "lastname"
+            ],
+            "measures": [
+                {
+                    "name": "amount",
+                    "label": "Hours"
+                }
+            ],
+            "aggregates": [
+                {
+                    "name": "amount_sum",
+                    "function": "sum",
+                    "measure": "amount"
+                },
+                {
+                    "name": "record_count",
+                    "function": "count"
+                }
+            ],
+            "mappings": {
+                "item.line_item": "line_item",
+                "item.subcategory": "subcategory",
+                "item.subcategory_label": "subcategory_label",
+                "item.category": "category",
+                "item.category_label": "category_label"
+            },
+            "info": {
+                "min_date": "2010-01-01",
+                "max_date": "2010-12-31"
+            }
+        },
+        {
+            "name": "Year 2020",
+            "dimensions": [
+                "item",
+                "year",
+                "lastname"
+            ],
+            "measures": [
+                {
+                    "name": "amount",
+                    "label": "Hours"
+                }
+            ],
+            "aggregates": [
+                {
+                    "name": "amount_sum",
+                    "function": "sum",
+                    "measure": "amount"
+                },
+                {
+                    "name": "record_count",
+                    "function": "count"
+                }
+            ],
+            "mappings": {
+                "item.line_item": "line_item",
+                "item.subcategory": "subcategory",
+                "item.subcategory_label": "subcategory_label",
+                "item.category": "category",
+                "item.category_label": "category_label"
+            },
+            "info": {
+                "min_date": "2010-01-01",
+                "max_date": "2010-12-31"
+            }
+        },
+        {
+            "name": "Active Projects",
+            "dimensions": [
+                "item", "startdate"
+            ],
+            "measures": [
+                {
+                    "name": "totalhours",
+                    "label": "Total_Hours"
+                },
+                {
+                    "name": "budget",
+                    "label": "Budget"
+                }
+            ],
+            "aggregates": [
+                {
+                    "name": "amount_sum",
+                    "function": "sum",
+                    "measure": "totalhours"
+                },
+                {
+                    "name": "record_count",
+                    "function": "count"
+                },    
+                {
+                    "name": "budget_sum",
+                    "function": "max",
+                    "measure": "budget"
+                }
+            ],
+            "mappings": {
+                    "item.line_item": "line_item",
+                    "item.subcategory": "subcategory",
+                    "item.subcategory_label": "subcategory_label",
+                    "item.category": "category",
+                    "item.category_label": "category_label"
+            },
+            "info": {
+                "min_date": "2010-01-01",
+                "max_date": "2010-12-31"
+            }
+        },
+        {
+            "name": "Archived Projects",
+            "dimensions": [
+                "item", "startdate"
+            ],
+            "measures": [
+                {
+                    "name": "totalhours",
+                    "label": "Total_Hours"
+                },
+                {
+                    "name": "budget",
+                    "label": "Budget"
+                }
+            ],
+            "aggregates": [
+                {
+                    "name": "amount_sum",
+                    "function": "sum",
+                    "measure": "totalhours"
+                },
+                {
+                    "name": "record_count",
+                    "function": "count"
+                },    
+                {
+                    "name": "budget_sum",
+                    "function": "max",
+                    "measure": "budget"
+                }
+            ],
+            "mappings": {
+                    "item.line_item": "line_item",
+                    "item.subcategory": "subcategory",
+                    "item.subcategory_label": "subcategory_label",
+                    "item.category": "category",
+                    "item.category_label": "category_label"
+            },
+            "info": {
+                "min_date": "2010-01-01",
+                "max_date": "2010-12-31"
+            }
+        },
+        {
+            "name": "Goal",
+            "dimensions": [
+                "item",
+                "year",
+                "lastname"
+            ],
+            "measures": [
+                {
+                    "name": "amount",
+                    "label": "Hours"
+                }
+            ],
+            "aggregates": [
+                {
+                    "name": "amount_sum",
+                    "function": "sum",
+                    "measure": "amount"
+                },
+                {
+                    "name": "record_count",
+                    "function": "count"
+                }
+            ],
+            "mappings": {
+                "item.line_item": "line_item",
+                "item.subcategory": "subcategory",
+                "item.subcategory_label": "subcategory_label",
+                "item.category": "category",
+                "item.category_label": "category_label"
+            },
+            "info": {
+                "min_date": "2010-01-01",
+                "max_date": "2010-12-31"
+            }
+        },
+    ]
+}

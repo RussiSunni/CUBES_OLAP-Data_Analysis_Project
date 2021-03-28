@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+
+<head>
+    <title>Construct Harvest Data</title>
+    <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" <!--
+        FontAwesome -->
+    <script src="https://kit.fontawesome.com/b59b47a0b0.js" crossorigin="anonymous"></script>
+    <!-- CubesViewer -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico">
+    <link rel="stylesheet" href="html/lib/angular-ui-grid/ui-grid.css" />
+    <link rel="stylesheet" href="html/lib/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="html/lib/nvd3/nv.d3.css" />
+    <link rel="stylesheet" href="/../dist/cubesviewer.css" />
+    <link rel="stylesheet" href="html/lib/bootstrap-submenu/css/bootstrap-submenu.css" />
+    <!-- after cubesviewer.css! -->
+    <link rel="stylesheet" href="html/cvapp.css" />
+    <script src="html/lib/jquery/jquery.js"></script>
+    <script src="html/lib/bootstrap/bootstrap.js"></script>
+    <script src="html/lib/bootstrap-submenu/js/bootstrap-submenu.js"></script>
+    <script src="html/lib/angular/angular.js"></script>
+    <script src="html/lib/angular-cookies/angular-cookies.js"></script>
+    <script src="html/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="html/lib/angular-ui-grid/ui-grid.js"></script>
+    <script src="html/lib/d3/d3.js"></script>
+    <script src="html/lib/nvd3/nv.d3.js"></script>
+    <script src="html/lib/flotr2/flotr2.min.js"></script>
+    <script src="/../dist/cubesviewer.js"></script>
+</head>
+
+<body class= "bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow">
+        <a class="navbar-brand" href="/"><img src="html/img/constuct_favicon.png" height=75></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/tutorial">Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/teams_hours">Team's Hours</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/non_billable_analysis">Non-billable analysis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/total">Total</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/test">Restricted Access</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/log-in">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/log-out">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-5">
+        <div class="border border-dark p-3 rounded bg-white">
+            <script type="text/javascript">
+
+                // Reference to the created view
+                var view1 = null;
+
+                // Initialize CubesViewer when document is ready
+                $(document).ready(function () {
+
+                    var cubesUrl = "https://constructeducation.pythonanywhere.com/";
+
+
+                    // Initialize CubesViewer system
+                    cubesviewer.init({
+                        cubesUrl: cubesUrl,
+                        debug: true
+                    });
+
+                    // Create views
+
+                    var serializedView = '{"mode":"explore","drilldown":[],"cuts":[],"datefilters":[],"columnHide":{},"columnWidths":{"percent_hours_recorded":469,"budget_actual_difference":217,"project_total_billable_hours":242,"project_budget":198,"percent_billable_hours":170,"amount_non_billable_sum":170},"columnSort":{},"cubename":"fact_time_entries","name":"Harvest Data Mart (1)"}';
+
+                    // Using a JSON string for view parameters:
+                    cubesviewer.apply(function () {
+                        view1 = cubesviewer.createView("#cv-view-1", "cube", serializedView);
+                    });
+
+                    // Using a Javascript object for view parameters:
+                    //cubesviewer.apply(function() {
+                    //    view2 = cubesviewer.createView('#cv-view-1', "cube", { "cubename": "webshop_visits" });
+                    //});
+                });
+
+                function switchMode(mode) {
+                    cubesviewer.apply(function () {
+                        view1.setViewMode(mode);
+                    });
+                }
+
+                function toggleControls() {
+                    cubesviewer.apply(function () {
+                        view1.setControlsHidden(!view1.params.controlsHidden);
+                    });
+                }
+            </script>
+            <div>
+                <div>
+                    <div style="border: none; margin-top: 22px; margin-bottom: 22px;">
+                        <div id="cv-view-1" style="width: 100%; min-height: 120px;">Loading CubesViewer...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

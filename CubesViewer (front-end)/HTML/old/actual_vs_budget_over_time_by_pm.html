@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us" >
+<head>
+
+    <title>CubesViewer Embedded View Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico">
+
+    <link rel="stylesheet" href="html/lib/angular-ui-grid/ui-grid.css" />
+    <link rel="stylesheet" href="html/lib/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="html/lib/nvd3/nv.d3.css" />
+    <link rel="stylesheet" href="/../dist/cubesviewer.css" />
+    <link rel="stylesheet" href="html/lib/bootstrap-submenu/css/bootstrap-submenu.css" /> <!-- after cubesviewer.css! -->
+
+    <link rel="stylesheet" href="html/cvapp.css" />
+
+    <script src="html/lib/jquery/jquery.js"></script>
+    <script src="html/lib/bootstrap/bootstrap.js"></script>
+    <script src="html/lib/bootstrap-submenu/js/bootstrap-submenu.js"></script>
+    <script src="html/lib/angular/angular.js"></script>
+    <script src="html/lib/angular-cookies/angular-cookies.js"></script>
+    <script src="html/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="html/lib/angular-ui-grid/ui-grid.js"></script>
+    <script src="html/lib/d3/d3.js"></script>
+    <script src="html/lib/nvd3/nv.d3.js"></script>
+    <script src="html/lib/flotr2/flotr2.min.js"></script>
+    <script src="/../dist/cubesviewer.js"></script>
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+    // Reference to the created view
+    var view1 = null;
+
+    // Initialize CubesViewer when document is ready
+    $(document).ready(function() {
+
+        // Get user Cubes information for the example
+        // var cubesUrl = prompt ("Enter your Cubes Server URL", "http://cubesdemo.cubesviewer.com");
+        var cubesUrl = "https://jonathandyason.pythonanywhere.com/";
+
+
+        // Initialize CubesViewer system
+        cubesviewer.init({
+            cubesUrl: cubesUrl,
+            debug: true
+        });
+
+        // Create views
+        var serializedView = '{"charttype":"lines","chartoptions":{"showLegend":true,"lineInterpolation":"monotone"},"mode":"chart","drilldown":["project_manager_hierarchy@default:project_manager"],"cuts":[],"datefilters":[{"dimension":"end_date_hierarchy","mode":"custom","date_from":"2018-08-01","date_to":"2020-03-10"}],"columnHide":{},"columnWidths":{},"columnSort":{},"cubename":"Fact_Time_Entries","name":"Harvest Data Mart (1)","xaxis":"project_end_date@default:project_end_month","yaxis":"budget_actual_difference"}';
+
+        // Using a JSON string for view parameters:
+        cubesviewer.apply(function() {
+        	view1 = cubesviewer.createView("#cv-view-1", "cube", serializedView);
+        });
+
+        // Using a Javascript object for view parameters:
+        //cubesviewer.apply(function() {
+        //    view2 = cubesviewer.createView('#cv-view-1', "cube", { "cubename": "webshop_visits" });
+        //});
+    });
+
+    function switchMode(mode) {
+    	cubesviewer.apply(function() {
+    		view1.setViewMode(mode);
+    	});
+    }
+
+    function toggleControls() {
+        cubesviewer.apply(function() {
+            view1.setControlsHidden(! view1.params.controlsHidden);
+        });
+    }
+
+</script>
+
+
+<div>
+
+
+
+    <div>
+        <div style="border: none; margin-top: 22px; margin-bottom: 22px;">
+            <div id="cv-view-1" style="width: 100%; min-height: 120px;">Loading CubesViewer...</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

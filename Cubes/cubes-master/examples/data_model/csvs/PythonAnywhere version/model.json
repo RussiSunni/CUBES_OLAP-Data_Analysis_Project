@@ -1,0 +1,268 @@
+{
+    "dimensions": [
+        {
+            "name": "hierarchy",
+            "levels": [
+                {
+                    "name": "client",
+                    "label": "Client",
+                    "attributes": [
+                        "client"
+                    ]
+                },
+                {
+                    "name": "project",
+                    "label": "Project",
+                    "attributes": [
+                        "project",
+                        "project_code"
+                    ]
+                },
+                {
+                    "name": "task",
+                    "label": "Task",
+                    "attributes": [
+                        "task"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "day",
+            "role": "time"
+        },
+        {
+            "name": "start_date",
+            "role": "time"
+        },
+        {
+            "name": "end_date",
+            "role": "time"
+        },
+        {
+            "name": "year",
+            "role": "time"
+        },
+        {
+            "name": "month",
+            "role": "time"
+        },
+        {
+            "name": "day_of_week",
+            "role": "time"
+        },
+        {
+            "name": "last_name"
+        },
+        {
+            "name": "project_manager"
+        },
+        {
+            "name": "billable"
+        },
+        {
+            "name": "roles"
+        }
+    ],
+    "cubes": [
+        {
+            "name": "Week_10_to_16_Feb_2020",
+            "dimensions": [
+                "hierarchy",
+                "day",
+                "last_name"
+            ],
+            "measures": [
+                {
+                    "name": "amount",
+                    "label": "Hours"
+                }
+            ],
+            "aggregates": [
+                {
+                    "name": "amount_sum",
+                    "function": "sum",
+                    "measure": "amount"
+                },
+                {
+                    "name": "record_count",
+                    "function": "count"
+                }
+            ],
+            "mappings": {
+                "hierarchy.task": "task",
+                "hierarchy.project": "project",
+                "hierarchy.project_code": "project_code",
+                "hierarchy.client": "client"
+            },
+            "info": {
+                "min_date": "2010-01-01",
+                "max_date": "2020-12-31"
+            }
+        },
+        {
+            "name": "Year_2020",
+            "dimensions": [
+                "hierarchy",
+                "day",
+                "last_name"
+            ],
+            "measures": [
+                {
+                    "name": "amount",
+                    "label": "Hours"
+                }
+            ],
+            "aggregates": [
+                {
+                    "name": "amount_sum",
+                    "function": "sum",
+                    "measure": "amount"
+                },
+                {
+                    "name": "record_count",
+                    "function": "count"
+                }
+            ],
+            "mappings": {
+                "hierarchy.task": "task",
+                "hierarchy.project": "project",
+                "hierarchy.project_code": "project_code",
+                "hierarchy.client": "client"
+            },
+            "info": {
+                "min_date": "2010-01-01",
+                "max_date": "2020-12-31"
+            }
+        },
+        {
+            "name": "Active_Projects",
+            "dimensions": [
+                "hierarchy",
+                "start_date"
+            ],
+            "measures": [
+                {
+                    "name": "total_hours",
+                    "label": "Total_Hours"
+                },
+                {
+                    "name": "budget",
+                    "label": "Budget"
+                }
+            ],
+            "aggregates": [
+                {
+                    "name": "amount_sum",
+                    "function": "sum",
+                    "measure": "total_hours"
+                },
+                {
+                    "name": "record_count",
+                    "function": "count"
+                },
+                {
+                    "name": "budget_sum",
+                    "function": "max",
+                    "measure": "budget"
+                }
+            ],
+            "mappings": {
+                "hierarchy.task": "task",
+                "hierarchy.project": "project",
+                "hierarchy.project_code": "project_code",
+                "hierarchy.client": "client"
+            },
+            "info": {
+                "min_date": "2010-01-01",
+                "max_date": "2020-12-31"
+            }
+        },
+        {
+            "name": "Archived_Projects",
+            "dimensions": [
+                "hierarchy",
+                "start_date"
+            ],
+            "measures": [
+                {
+                    "name": "total_hours",
+                    "label": "Total_Hours"
+                },
+                {
+                    "name": "budget",
+                    "label": "Budget"
+                }
+            ],
+            "aggregates": [
+                {
+                    "name": "amount_sum",
+                    "function": "sum",
+                    "measure": "total_hours"
+                },
+                {
+                    "name": "record_count",
+                    "function": "count"
+                },
+                {
+                    "name": "budget_sum",
+                    "function": "max",
+                    "measure": "budget"
+                }
+            ],
+            "mappings": {
+                "hierarchy.task": "task",
+                "hierarchy.project": "project",
+                "hierarchy.project_code": "project_code",
+                "hierarchy.client": "client"
+            },
+            "info": {
+                "min_date": "2010-01-01",
+                "max_date": "2020-12-31"
+            }
+        },
+        {
+            "name": "Goal",
+            "dimensions": [
+                "hierarchy",
+                "year",
+                "month",
+                "day",
+                "day_of_week",
+                "project_manager",
+                "name",
+                "start_date",
+                "end_date",
+                "billable",
+                "roles"
+            ],
+            "measures": [
+                {
+                    "name": "amount",
+                    "label": "Hours"
+                }
+            ],
+            "aggregates": [
+                {
+                    "name": "amount_sum",
+                    "function": "sum",
+                    "measure": "amount"
+                },
+                {
+                    "name": "record_count",
+                    "function": "count"
+                }
+            ],
+            "mappings": {
+                "hierarchy.task": "task",
+                "hierarchy.project": "project",
+                "hierarchy.project_code": "project_code",
+                "hierarchy.client": "client"
+            },
+            "info": {
+                "min_date": "2010-01-01",
+                "max_date": "2020-12-31"
+            }
+        }
+    ]
+}

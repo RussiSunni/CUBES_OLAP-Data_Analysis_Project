@@ -1,0 +1,738 @@
+{
+    "dimensions": [
+            {
+            "name": "date",
+            "label": "Date",
+            "role": "time",
+            "levels": [
+                {
+                    "name": "year",
+                    "label": "Year",
+                    "role": "year",
+                    "attributes": [
+                        "year"
+                    ]
+                },
+                {
+                    "name": "quarter",
+                    "label": "Quarter",
+                    "role": "quarter",
+                    "attributes": [
+                        "quarter"
+                    ]
+                },
+                {
+                    "name": "month",
+                    "label": "Month",
+                    "role": "month",
+                    "attributes": [
+                        "month",
+                        "month_name"
+                    ]
+                },
+                {
+                    "name": "week",
+                    "label": "Week",
+                    "role": "week",
+                    "attributes": [
+                        "week"
+                    ]
+                },
+                {
+                    "name": "day_name",
+                    "label": "Day Name",
+                    "attributes": [
+                        "day_name"
+                    ]
+                },
+                {
+                    "name": "day",
+                    "label": "Day",
+                    "role": "day",
+                    "attributes": [
+                        "day"
+                    ]
+                }
+            ],
+            "hierarchies": [
+                {
+                    "name": "ymd",
+                    "label": "ymd",
+                    "levels": [
+                        "year",
+                        "month",
+                        "day"
+                    ]
+                },
+                {
+                    "name": "ym",
+                    "label": "ym",
+                    "levels": [
+                        "year",
+                        "month"
+                    ]
+                },
+                {
+                    "name": "yqmd",
+                    "label": "yqmd",
+                    "levels": [
+                        "year",
+                        "quarter",
+                        "month",
+                        "day"
+                    ]
+                },
+                {
+                    "name": "ywd",
+                    "label": "ywd",
+                    "levels": [
+                        "year",
+                        "week",
+                        "day_name"
+                    ]
+                }
+            ],
+            "default_hierarchy_name": "ymd"
+        },
+          {
+            "name": "start_date_hierarchy",
+            "label": "Project Start Date",
+            "role": "time",
+            "levels": [
+                {
+                    "name": "year",
+                    "label": "Year",
+                    "role": "year",
+                    "attributes": [
+                        "year"
+                    ]
+                },
+                {
+                    "name": "month",
+                    "label": "Month",
+                    "role": "month",
+                    "attributes": [
+                        "month"
+                    ]
+                },
+                {
+                    "name": "day",
+                    "label": "Day",
+                    "role": "day",
+                    "attributes": [
+                        "day"
+                    ]
+                }
+            ],
+            "hierarchies": [
+                {
+                    "name": "ymd",
+                    "label": "ymd",
+                    "levels": [
+                        "year",
+                        "month",
+                        "day"
+                    ]
+                },
+                {
+                    "name": "ym",
+                    "label": "ym",
+                    "levels": [
+                        "year",
+                        "month"
+                    ]
+                }
+            ],
+            "default_hierarchy_name": "ymd"
+        },
+        {
+            "name": "end_date_hierarchy",
+            "label": "Project End Date",
+            "role": "time",
+            "levels": [
+                {
+                    "name": "year",
+                    "label": "Year",
+                    "role": "year",
+                    "attributes": [
+                        "year"
+                    ]
+                },
+                {
+                    "name": "month",
+                    "label": "Month",
+                    "role": "month",
+                    "attributes": [
+                        "month"
+                    ]
+                },
+                {
+                    "name": "day",
+                    "label": "Day",
+                    "role": "day",
+                    "attributes": [
+                        "day"
+                    ]
+                }
+            ],
+            "hierarchies": [
+                {
+                    "name": "ymd",
+                    "label": "ymd",
+                    "levels": [
+                        "year",
+                        "month",
+                        "day"
+                    ]
+                },
+                {
+                    "name": "ym",
+                    "label": "ym",
+                    "levels": [
+                        "year",
+                        "month"
+                    ]
+                }
+            ],
+            "default_hierarchy_name": "ymd"
+        },
+        {
+            "name": "client_project_task_hierarchy",
+            "label": "Client / Project / Task",
+            "levels": [
+                {
+                    "name": "client",
+                    "label": "Client",
+                    "order_attribute": "client_name",
+                    "attributes": [
+                        "client_id",
+                        "client_name"
+                    ]
+                },
+                {
+                    "name": "project",
+                    "label": "Project",
+                    "order_attribute": "project_name",
+                    "attributes": [
+                        "project_id",
+                        "project_name"
+                    ]
+                },
+                {
+                    "name": "task",
+                    "label": "Task",
+                    "order_attribute": "task_name",
+                    "attributes": [
+                        "task_id",
+                        "task_name"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "role_user_hierarchy",
+            "label": "Team / Name",
+            "levels": [
+                {
+                    "name": "role",
+                    "label": "Team",
+                    "order_attribute": "role_name",
+                    "attributes": [
+                        "role_id",
+                        "role_name"
+                    ]
+                },
+                {
+                    "name": "user",
+                    "label": "Name",
+                    "order_attribute": "user_full_name",
+                    "attributes": [
+                        "user_id",
+                        "user_full_name"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "billable",
+            "label": "Billable?"
+        },
+        {
+            "name": "user",
+            "label": "Name",
+            "attributes": [
+                "id",
+                "full_name"
+            ],
+            "order_attribute": "full_name"
+        },
+        {
+            "name": "employee",
+            "label": "Employee or Contractor?",
+            "order_attribute": "is_employee",
+            "attributes": [
+                "id",
+                "is_employee"
+            ]
+        },
+        {
+            "name": "active_user",
+            "label": "Current Staff Member?",
+            "attributes": [
+                "id",
+                "is_active"
+            ],
+            "order_attribute": "is_active"
+        },
+        {
+            "name": "client",
+            "label": "Client",
+            "attributes": [
+                {
+                    "name": "id"
+                },
+                {
+                    "name": "name"
+                }
+            ],
+            "order_attribute": "name"
+        },
+        {
+            "name": "project",
+            "label": "Project",
+            "order_attribute": "name",
+            "attributes": [
+                "id",
+                "name"
+            ]
+        },
+        {
+            "name": "task",
+            "label": "Task",
+            "order_attribute": "name",
+            "attributes": [
+                "id",
+                "name"
+            ]
+        },
+        {
+            "name": "role",
+            "label": "Team",
+            "order_attribute": "name",
+            "attributes": [
+                "id",
+                "name"
+            ]
+        },
+        {
+            "name": "user_project_assignment_hierarchy",
+            "label": "User Project Assignment - by User",
+            "levels": [
+                {
+                    "name": "User",
+                    "label": "Name",
+                    "attributes": [
+                        "user_id",
+                        "user_full_name"
+                    ],
+                    "order_attribute": "user_full_name"
+                },
+                {
+                    "name": "project",
+                    "label": "User Project Assignment",
+                    "attributes": [
+                        "project_user_assignment_id",
+                        "project_user_assignment_project_name"
+                    ],
+                    "order_attribute": "project_user_assignment_project_name"
+                }
+            ]
+        },
+        {
+            "name": "project_user_assignment_hierarchy",
+            "label": "User Project Assignment - by Project",
+            "levels": [
+                {
+                    "name": "project",
+                    "label": "Project",
+                    "attributes": [
+                        "project_id",
+                        "project_name"
+                    ],
+                    "order_attribute": "project_name"
+                },
+                {
+                    "name": "user",
+                    "label": "Project User Assignment",
+                    "attributes": [
+                        "user_project_assignment_id",
+                        "user_project_assignment_user_name"
+                    ],
+                    "order_attribute": "user_project_assignment_user_name"
+                }
+            ]
+        },
+        {
+            "name": "project_manager_hierarchy",
+            "label": "Project Manager Hierarchy",
+            "levels": [
+                {
+                    "name": "project_manager",
+                    "label": "Project Manager",
+                    "attributes": [
+                        "project_manager_id",
+                        "full_name"
+                    ],
+                    "order_attribute": "full_name"
+                },
+                {
+                    "name": "project",
+                    "label": "Project",
+                    "attributes": [
+                        "project_id",
+                        "project_name"
+                    ],
+                    "order_attribute": "project_name"
+                }
+            ]
+        },
+        {
+            "name": "project_start_date",
+            "label": "Project Start Date to Project",
+            "levels": [
+                {
+                    "name": "project_start_year",
+                    "label": "Year",
+                    "attributes": [
+                        "year"
+                    ],
+                    "order_attribute": "year",
+                    "role": "year"
+                },
+                {
+                    "name": "project_start_month",
+                    "label": "Month",
+                    "role": "month",
+                    "order_attribute": "month",
+                    "attributes": [
+                        "month"
+                    ]
+                },
+                {
+                    "name": "project_start_day",
+                    "role": "day",
+                    "order_attribute": "starts_on",
+                    "label": "Day",
+                    "attributes": [
+                        "starts_on"
+                    ]
+                },
+                {
+                    "name": "project",
+                    "label": "Project",
+                    "order_attribute": "name",
+                    "attributes": [
+                        "id",
+                        "name"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "project_end_date",
+            "label": "Project End Date to Project",
+            "levels": [
+                {
+                    "name": "project_end_year",
+                    "label": "Year",
+                    "attributes": [
+                        "year"
+                    ],
+                    "order_attribute": "year",
+                    "role": "year"
+                },
+                {
+                    "name": "project_end_month",
+                    "label": "Month",
+                    "attributes": [
+                        "month"
+                    ],
+                    "order_attribute": "month",
+                    "role": "month"
+                },
+                {
+                    "name": "project_end_date",
+                    "label": "Project End Date",
+                    "attributes": [
+                        "ends_on"
+                    ],
+                    "order_attribute": "ends_on",
+                    "role": "day"
+                },
+                {
+                    "name": "project",
+                    "label": "Project",
+                    "order_attribute": "name",
+                    "attributes": [
+                        "id",
+                        "name"
+                    ]
+                }
+            ]
+        }
+    ],
+    "cubes": [
+        {
+            "name": "Fact_Time_Entries",
+            "label": "Harvest Data Mart",
+            "order_attribute": "amount",
+            "order": "amount",
+            "dimensions": [
+                "date",
+                "start_date_hierarchy",
+                "end_date_hierarchy",
+                "project_start_date",
+                "project_end_date",
+                "client_project_task_hierarchy",
+                "role_user_hierarchy",
+                "user_project_assignment_hierarchy",
+                "project_user_assignment_hierarchy",
+                "project_manager_hierarchy",
+                "client",
+                "project",
+                "task",
+                "role",
+                "user",
+                "billable",
+                "employee",
+                "active_user"
+
+            ],
+            "measures": [
+                {
+                    "name": "hours",
+                    "label": "Hours"
+                },
+                {
+                    "name": "billable_hours",
+                    "label": "Billable Hours"
+                },
+                {
+                    "name": "non_billable_hours",
+                    "label": "Non-billable Hours"
+                },
+                {
+                    "name": "weekly_capacity",
+                    "label": "Weekly Capacity"
+                },
+                {
+                    "name": "budget",
+                    "label": "Project Budget"
+                },
+                {
+                    "name": "total_billable_hours"
+                },
+                {
+                    "name": "num_users"
+                },
+                {
+                    "name": "num_projects",
+                    "label": "Number of Projects"
+                }
+            ],
+            "aggregates": [
+                {
+                    "name": "record_count",
+                    "function": "count"
+                },
+                {
+                    "name": "amount_sum",
+                    "label": "Hours",
+                    "function": "sum",
+                    "measure": "hours"
+                },
+                {
+                    "name": "amount_billable_sum",
+                    "label": "Billable Hours",
+                    "function": "sum",
+                    "measure": "billable_hours"
+                },
+                {
+                    "name": "amount_non_billable_sum",
+                    "label": "Non-billable Hours",
+                    "function": "sum",
+                    "measure": "non_billable_hours"
+                },
+                {
+                    "name": "percent_billable_hours",
+                    "label": "Percent Billable Hours",
+                    "expression": "sum(billable_hours) * 100 / sum(hours)"
+                },
+                {
+                    "name": "project_budget",
+                    "label": "Average of Project Budget",
+                    "function": "avg",
+                    "measure": "budget"
+                },
+                {
+                    "name": "project_total_billable_hours",
+                    "function": "avg",
+                    "measure": "total_billable_hours",
+                    "label": "Average Project Billable Hours"
+                },
+                {
+                    "name": "budget_actual_difference",
+                    "label": "Average Difference Between Budget and Actual",
+                    "expression": "project_budget - project_total_billable_hours"
+                },
+                {
+                    "name": "num_projects_per_user",
+                    "measure": "num_projects",
+                    "label": "Average Number of Projects per User",
+                    "function": "avg"
+                },
+                {
+                    "name": "avg_weekly_capacity",
+                    "label": "Average Weekly Capacity per User",
+                    "expression": "avg(weekly_capacity / 3600)"
+                },
+                {
+                    "name": "percent_hours_recorded",
+                    "label": "Percentage of Time Recorded Compared to Capacity",
+                    "expression": "amount_sum / avg_weekly_capacity * 100"
+                }
+            ],
+            "mappings": {
+                "client_project_task_hierarchy.task_id": "dim_task.id",
+                "client_project_task_hierarchy.task_name": "dim_task.name",
+                "client_project_task_hierarchy.contract_id": "dim_contract_id",
+                "client_project_task_hierarchy.client_id": "dim_client.id",
+                "client_project_task_hierarchy.client_name": "dim_client.name",
+                "client_project_task_hierarchy.project_id": "dim_project.id",
+                "client_project_task_hierarchy.project_name": "dim_project.name",
+                "client_id": "dim_client.id",
+                "client_name": "dim_client.name",
+                "project_id": "dim_project.id",
+                "project_name": "dim_project.name",
+                "task_id": "dim_task.id",
+                "task_name": "dim_task.name",
+                "full_name": "dim_user.full_name",
+                "first_name": "dim_user.first_name",
+                "date.year": "dim_date.year",
+                "date.quarter": "dim_date.quarter",
+                "date.month": "dim_date.month",
+                "date.month_name": "dim_date.month_name",
+                "date.week": "dim_date.week",
+                "date.day_name": "dim_date.day_name",
+                "date.day": "dim_date.day",
+                "start_date_hierarchy.year": {"table":"dim_project", "column":"starts_on", "extract":"year"},
+                "start_date_hierarchy.month": {"table":"dim_project", "column":"starts_on", "extract":"month"},
+                "start_date_hierarchy.day": {"table":"dim_project", "column":"starts_on", "extract":"day"},
+                "end_date_hierarchy.year": {"table":"dim_project", "column":"ends_on", "extract":"year"},
+                "end_date_hierarchy.month": {"table":"dim_project", "column":"ends_on", "extract":"month"},
+                "end_date_hierarchy.day": {"table":"dim_project", "column":"ends_on", "extract":"day"},
+                "weekly_capacity": "dim_user.weekly_capacity",
+                "user_project_assignment_hierarchy.user_id": "user_assignment_users.id",
+                "user_project_assignment_hierarchy.user_full_name": "user_assignment_users.full_name",
+                "user_project_assignment_hierarchy.project_user_assignment_id": "user_assignment_projects.id",
+                "user_project_assignment_hierarchy.project_user_assignment_project_name": "user_assignment_projects.name",
+                "project_user_assignment_hierarchy.project_id": "user_assignment_projects.id",
+                "project_user_assignment_hierarchy.project_name": "user_assignment_projects.name",
+                "project_user_assignment_hierarchy.user_project_assignment_id": "user_assignment_users.id",
+                "project_user_assignment_hierarchy.user_project_assignment_user_name": "user_assignment_users.full_name",
+                "budget": "dim_project.budget",
+                "total_billable_hours": "dim_project.total_billable_hours",
+                "num_users": "dim_role.num_users",
+                "num_projects": "dim_user.num_projects",
+                "project_manager_hierarchy.project_manager_id": "dim_project_manager.id",
+                "project_manager_hierarchy.full_name": "dim_project_manager.full_name",
+                "project_manager_hierarchy.project_id": "dim_project.id",
+                "project_manager_hierarchy.project_name":"dim_project.name",
+                "role_user_hierarchy.role_id": "dim_role.id",
+                "role_user_hierarchy.role_name": "dim_role.name",
+                "role_user_hierarchy.user_id": "dim_user.id",
+                "role_user_hierarchy.user_full_name": "dim_user.full_name",
+                "project_start_date.year": {"table":"dim_project_start_date", "column":"starts_on", "extract":"year"},
+                "project_start_date.month": {"table":"dim_project_start_date", "column":"starts_on", "extract":"month"},
+                "project_end_date.year": {"table":"dim_project_end_date", "column":"ends_on", "extract":"year"},
+                "project_end_date.month": {"table":"dim_project_end_date", "column":"ends_on", "extract":"month"}
+            },
+            "joins": [
+                {
+                    "master": "Fact_Time_Entries.user_id",
+                    "detail": "dim_user.id"
+                },
+                {
+                    "master": "Fact_Time_Entries.client_id",
+                    "detail": "dim_client.id"
+                },
+                {
+                    "master": "Fact_Time_Entries.project_id",
+                    "detail": "dim_project.id"
+                },
+                {
+                    "master": "Fact_Time_Entries.task_id",
+                    "detail": "dim_task.id"
+                },
+                {
+                    "master": "Fact_Time_Entries.date_id",
+                    "detail": "dim_date.id"
+                },
+                {
+                    "master": "Fact_Time_Entries.user_id",
+                    "detail": "bridge_role_user.user_id"
+                },
+                {
+                    "master": "bridge_role_user.role_id",
+                    "detail": "dim_role.id"
+                },
+                {
+                    "master": "Fact_Time_Entries.project_id",
+                    "detail": "bridge_project_manager_project.project_id"
+                },
+                {
+                    "master": "bridge_project_manager_project.project_manager_id",
+                    "detail": "dim_project_manager.id"
+                },
+                {
+                    "master": "Fact_Time_Entries.user_assignment_id",
+                    "detail": "dim_project_user_assignment.id"
+                },
+                {
+                    "master": "dim_project_user_assignment.user_id",
+                    "detail": "dim_user.id",
+                    "alias": "user_assignment_users"
+                },
+                {
+                    "master": "dim_project_user_assignment.project_id",
+                    "detail": "dim_project.id",
+                    "alias": "user_assignment_projects"
+                },
+                {
+                    "master": "Fact_Time_Entries.user_id",
+                    "detail": "dim_user.id",
+                    "alias": "dim_employee"
+                },
+                {
+                    "master": "Fact_Time_Entries.user_id",
+                    "detail": "dim_user.id",
+                    "alias": "dim_active_user"
+                },
+                {
+                    "master": "Fact_Time_Entries.project_id",
+                    "detail": "dim_project.id",
+                    "alias": "dim_project_start_date"
+                },
+                {
+                    "master": "Fact_Time_Entries.project_id",
+                    "detail": "dim_project.id",
+                    "alias": "dim_project_end_date"
+                }
+            ],
+            "info": {
+                "min_date": "2014-01-01",
+                "max_date": "2029-12-31"
+            }
+        }
+    ]
+}
