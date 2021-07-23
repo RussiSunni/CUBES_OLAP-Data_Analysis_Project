@@ -7,6 +7,6 @@ using the [CubesViewer front end](http://www.cubesviewer.com/) for this data mod
 
 includes a Flask web app,
 an OLAP data model in JSON,
-and small MySQL datawarehouse,
+an small MySQL datawarehouse,
 an ETL script in Python,
 and a few HTML views of the OLAP data.
